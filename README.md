@@ -13,6 +13,7 @@
 10) In terminal, type github key saved on Onedrive
 11) Select bootcamp session
 12) Select project to test
+13) Type Control C to get out of the testing space
 
 ## How to submit
 1) In terminal, type =>  os submit
@@ -21,4 +22,5 @@
 
 ## How to push work to github
 1) In terminal, type => git add -A
-2)
+2) In termianl, type => git commit -m "description"
+3) In termianl, type => git push
