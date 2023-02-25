@@ -16,7 +16,7 @@
 13) Type Control C to get out of the testing space
 
 ## How to submit
-1) In terminal, type =>  os submit
+1) In terminal, type => os submit
 2) Select bootcamp session
 3) Select project to submit
 
