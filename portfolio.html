@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Darryl's Amazing Website</title>
+        <style type="text/css">
+            body {
+                background: rgb(236, 212, 0);
+                color: rgb(10, 9, 0);
+                padding: 10px;
+                font-family: arial;
+            }
+            header {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            h1 {
+                margin: 10px;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+
+            /* navigation menu */
+            nav {
+                background: rgb(0, 0, 0);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 10px;
+                border-radius: 10% / 50%;
+            }
+            nav header {
+                display: flex;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                flex: 1;
+            }
+            nav ul {
+                list-style-image: none;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar img {
+                width: 200px;
+                border-radius: 30px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            h2, h3 {
+                margin: 0px;
+            }
+           /* portfolio styles */
+           #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            #portfolio li:hover {
+                background: #eee;
+            } 
+
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
+        </style>
+    </head>
+
+    <body>
+      <div id="all-contents">
+            <nav>
+                <header>Darryl's Dope Site</header>
+                <ul>
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <div class="sidebar">
+                    <img src="https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/75464383_2442270239154800_2932687485995581440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=8MWJ-UjKKL8AX9es9Wh&_nc_ht=scontent-atl3-2.xx&oh=00_AfBA3D7mkVU3QEyAUJW2vy0GWSOq24EhF5Aq_0wwCbydDg&oe=6420A31F" >
+                </div>
+                <div class="content">
+                    <h1>Portfolio</h1>
+                    <ul id="portfolio">
+                    </ul>
+                </div>
+            </main>
+      </div>
+      
+    </body>
+</html>
