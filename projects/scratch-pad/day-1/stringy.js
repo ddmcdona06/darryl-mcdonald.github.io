@@ -61,7 +61,10 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
+    // use lower case method 
+    return string.toLowerCase()
+    //use. replace method to replace the empty space with a string
+    return string.join('-');
 
 
     // YOUR CODE ABOVE HERE //
