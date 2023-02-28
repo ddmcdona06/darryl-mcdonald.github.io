@@ -11,8 +11,24 @@
  *  d. FINALLY, for numbers which are multiples of both three and five print “FizzBuzz”.
 */
 function fizzBuzz() {
-    // YOUR CODE GOES BELOW HERE //
 
+    // YOUR CODE GOES BELOW HERE //
+    while (number > 0 && number <= 100){
+    switch (number){
+        case number % 3 === 0 && number % 5 === 0:
+            console.log('FizzBuzz');
+            break;
+        case number % 3 === 0:
+            console.log('Fizz');
+            break;
+        case number % 5 === 0:
+            console.log('Buzz');
+            break;
+        case number:
+            console.log(number);
+            break;
+    }
+}
 
 
     // YOUR CODE GOES ABOVE HERE //

@@ -12,8 +12,12 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
-  
+
+  //loop through array with for loop
+  for(var i = 0; i < array.length; i++){
+    //log value to console
+    console.log(array[i]);
+  }  
   
   
   // YOUR CODE ABOVE HERE //
@@ -25,9 +29,13 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+
+  //loop backwards through array using for loop
+  for(var i = array.length -1;i >=0; i--){
+    //log values to console
+    console.log(array[i]);
+  }
+   
   
   // YOUR CODE ABOVE HERE //
 }
@@ -38,6 +46,10 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
+  //use for in loop to access an object
+  for(var key in object){
+    return object[key];
+  }
   
   
   
@@ -51,8 +63,12 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  //loop over object with for loop
+  for(var key in object){
+    //print keys to console
+    console.log(key);
+  }
+    
   
   // YOUR CODE ABOVE HERE //
 }
@@ -63,7 +79,7 @@ function printObjectKeys(object) {
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  //
   
   
   // YOUR CODE ABOVE HERE //
@@ -76,7 +92,11 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  //loop over object
+  for(var key in object){
+    //log values
+    console.log(object[key]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -88,7 +108,11 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  //loop through an object
+  for(var key in object){
+    //return the length of the key value pairs
+    return object[key].length;
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -101,6 +125,7 @@ function getObjectLength(object) {
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
   
+  //loop over object in reverse
   
   
   
