@@ -13,23 +13,20 @@
 function fizzBuzz() {
 
     // YOUR CODE GOES BELOW HERE //
-    while (number > 0 && number <= 100){
-    switch (number){
-        case number % 3 === 0 && number % 5 === 0:
+    //use for loop to iterate numbers 1 to 100
+    for(var i = 1; i <= 100; i++){
+        //use if else if statements and comparison operators
+        if(i % 3 === 0 && i % 5 === 0){
             console.log('FizzBuzz');
-            break;
-        case number % 3 === 0:
+        } else if(i % 3 === 0){
             console.log('Fizz');
-            break;
-        case number % 5 === 0:
+        } else if(i % 5 === 0){
             console.log('Buzz');
-            break;
-        case number:
-            console.log(number);
-            break;
+        } else{
+            console.log(i);
+        }
     }
-}
-
+  
 
     // YOUR CODE GOES ABOVE HERE //
 }

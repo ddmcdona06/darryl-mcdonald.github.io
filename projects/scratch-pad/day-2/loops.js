@@ -46,10 +46,8 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  //use for in loop to access an object
-  for(var key in object){
-    return object[key];
-  }
+  //use Object.keys to execute
+  return Object.keys(object);
   
   
   
@@ -63,12 +61,12 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  //loop over object with for loop
-  for(var key in object){
-    //print keys to console
-    console.log(key);
+  //use for loop to access object
+  for(var keys in object){
+    //print keys
+    console.log(keys)
   }
-    
+      
   
   // YOUR CODE ABOVE HERE //
 }
@@ -79,7 +77,8 @@ function printObjectKeys(object) {
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  //
+  //use Object.values to execute
+  return Object.values(object);
   
   
   // YOUR CODE ABOVE HERE //
@@ -92,12 +91,12 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  //loop over object
-  for(var key in object){
-    //log values
-    console.log(object[key]);
+  //use for loop to access object
+  for(var keys in object){
+    //print the values using bracket notation
+    console.log(object[keys])
   }
-  
+
   
   // YOUR CODE ABOVE HERE //
 }
@@ -111,7 +110,7 @@ function getObjectLength(object) {
   //loop through an object
   for(var key in object){
     //return the length of the key value pairs
-    return object[key].length;
+    return Object.keys(object).length;
   }
   
   
@@ -126,7 +125,8 @@ function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
   
   //loop over object in reverse
-  
+  var reverseObj = Object.values(object).reverse();
+  reverseObj.forEach(value => {console.log(value)});
   
   
   // YOUR CODE ABOVE HERE //
