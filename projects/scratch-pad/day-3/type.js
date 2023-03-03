@@ -14,10 +14,14 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+    if(typeOf(value) === [] && typeOf(value) !== {} && typeOf(value) !== Date() && typeOf(value) !== null ){
+        return true;
+    } else{
+        return false;
+    }
+        
     
-    
-    
-    
+
     // YOUR CODE ABOVE HERE //
 }
 

@@ -14,6 +14,13 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
+    return function otherDigit(value){
+       if(base > value){
+        return true;
+       } else{
+        return false;
+       }
+    }
     
     
     
