@@ -62,16 +62,15 @@ function makeContactList() {
         findContact(fullName){
             //loop through contacts
             for(var i = 0; i < contacts.length; i++){
-                contacts[i];             
-            }
-            if(fullName === contacts[i]["firstName" + " " + contacts[i]["lastname"]]){
-                return contact;
-            } else {
-                return undefined;
-            }
-         
+                //loop through each object within contacts indexes
+                for(var key in contacts[i]){               
+                };             
+            };
+            var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
+            return findContact(name);
+            
         },
-        removeContact(){
+        removeContact(contact){
             //use splice method to remove contact
             contacts.splice(contact, contact);
         }

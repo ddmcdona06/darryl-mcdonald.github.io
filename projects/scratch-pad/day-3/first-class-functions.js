@@ -14,12 +14,8 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    return function otherDigit(value){
-       if(base > value){
-        return true;
-       } else{
-        return false;
-       }
+    return function testThis(value){
+       return value > base;
     }
     
     
@@ -35,7 +31,10 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+    //return a function
+    return function testThisHere(value){
+        return value < base;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -49,7 +48,10 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+    //return a function
+    return function stringGo(string){
+        return string[0] === startsWith
+        }  
     
     
     // YOUR CODE ABOVE HERE //
@@ -63,7 +65,9 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+    return function stringNo(string){
+        return string[string.length - 1] === startsWith;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -79,6 +83,8 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
+    //return modified strings
+    return stringsMod
     
     
     
