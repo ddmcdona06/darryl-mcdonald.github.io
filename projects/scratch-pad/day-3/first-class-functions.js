@@ -47,12 +47,11 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+
     //return a function
     return function stringGo(string){
-        if(string[0] = startsWith){
-            return true;
-        }
+        //use startswith function to determine if a given string starts with "startsWith"
+        return string.startsWith(startsWith)
         }  
     
     
@@ -68,11 +67,9 @@ function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
 
     //return a function
-    return function stringNo(string){
+    return function stringEnd(string){
         //return if final  character equals endsWith 
-        if(string[string.length - 1] === endsWith){
-            return true;
-        }
+        return string.endsWith(endsWith)
     }
     
     
@@ -92,12 +89,11 @@ function modifyStrings(strings, modify) {
     var collections = [];
     //use for loop to access string{}
     for(var i =0; i < strings.length; i++){
-        //pass each string to the modify function
-         modify(strings[i])
-            return 
-    }      
-   
-    
+    //pass each string to the modify function and push into new array
+    collections.push(modify(strings[i]));
+    }
+    return collections;
+           
     
     // YOUR CODE ABOVE HERE //
 }
