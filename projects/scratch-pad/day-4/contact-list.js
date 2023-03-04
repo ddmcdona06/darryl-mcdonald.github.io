@@ -60,14 +60,15 @@ function makeContactList() {
             contacts.push(contact);
         },
         findContact(fullName){
+            var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
             //loop through contacts
             for(var i = 0; i < contacts.length; i++){
                 //loop through each object within contacts indexes
-                for(var key in contacts[i]){               
+                for(var key in contacts[i]){   
+                   if(fullName === name){ return key}             
                 };             
             };
-            var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
-            return findContact(name);
+            
             
         },
         removeContact(contact){

@@ -49,7 +49,7 @@ function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
 
     //return a function
-    return function stringGo(string){
+    return function stringStart(string){
         //use startswith function to determine if a given string starts with "startsWith"
         return string.startsWith(startsWith)
         }  

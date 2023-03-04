@@ -35,9 +35,9 @@ function isObject(value) {
     // YOUR CODE BELOW HERE //
     
     //use type of operator in an if statement and comparison operators to rule out the type of values 
-    if(typeof value === "object" && value !== ['object Date'] && value !== null && value !== ['object array']){
+    if(typeof value === "object" && value !== null && !Array.isArray(value) && value instanceof Date === false){
         return true;
-    } else{return false;}
+      } else {return false;}
     
     
     // YOUR CODE ABOVE HERE //
@@ -52,9 +52,9 @@ function isObject(value) {
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     //use if statement for comparison
-    if(typeof value === 'object' && value === ['object array'] && value !== null && value !== ['object Date']){
+    if(typeof value === "object" || Array.isArray(value) && value !== null && value instanceof Date === false){
         return true;
-    } else{return false;}
+      } else {return false}
     
     
     
@@ -84,11 +84,11 @@ function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
     //use typeof method
-    if(typeof value === "object" && value === 'array'){
+    if(Array.isArray(value) === true){
         return "array";
-    } else if(typeof value === "object" && value === null){
+    } else if(value === null){
         return "null";
-    } else if(typeof value === "object" && value === Date()){
+    } else if(value instanceof Date === true){
         return "date";
     } else {return typeof value;}
     
