@@ -50,7 +50,9 @@ function createStartsWithFilter(startsWith) {
     
     //return a function
     return function stringGo(string){
-        return string[0] === startsWith
+        if(string[0] = startsWith){
+            return true;
+        }
         }  
     
     
@@ -64,9 +66,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+
+    //return a function
     return function stringNo(string){
-        return string[string.length - 1] === startsWith;
+        //return if final  character equals endsWith 
+        if(string[string.length - 1] === endsWith){
+            return true;
+        }
     }
     
     
@@ -82,10 +88,15 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    //return modified strings
-    return stringsMod
-    
+    // declare var collections
+    var collections = [];
+    //use for loop to access string{}
+    for(var i =0; i < strings.length; i++){
+        //pass each string to the modify function
+         modify(strings[i])
+            return 
+    }      
+   
     
     
     // YOUR CODE ABOVE HERE //
@@ -102,8 +113,15 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
+    for(var i = 0; i < strings.length; i++){
+    //if else stement to compare
+        if(test(strings[i]) === false){
+            return false;
+        }
+    }
+    return true;
+
+
     
     
     // YOUR CODE ABOVE HERE //
