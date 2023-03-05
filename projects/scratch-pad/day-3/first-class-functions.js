@@ -47,7 +47,7 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-
+    
     //return a function
     return function stringStart(string){
         //use startswith function to determine if a given string starts with "startsWith"
@@ -75,6 +75,7 @@ function createEndsWithFilter(endsWith) {
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given an Array of Strings and a Function designed to modify a String, 
@@ -109,8 +110,9 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    //for loop toiterate through function
     for(var i = 0; i < strings.length; i++){
-    //if else stement to compare
+    //if else statement to compare
         if(test(strings[i]) === false){
             return false;
         }
