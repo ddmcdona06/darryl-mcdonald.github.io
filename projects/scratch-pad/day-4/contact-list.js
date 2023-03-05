@@ -39,7 +39,7 @@ function makeContact(id, nameFirst, nameLast) {
     contact.id = id,
     contact.nameFirst = nameFirst,
     contact.nameLast = nameLast;
-    return contact
+    return contact;
 } 
 
 
@@ -57,23 +57,31 @@ function makeContactList() {
             return contacts.length;
         },
         addContact(contact){
-            contacts.push(contact);
+            return contacts.push(contact);
         },
         findContact(fullName){
-            var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
-            //loop through contacts
+            //loop through contacts array
             for(var i = 0; i < contacts.length; i++){
-                //loop through each object within contacts indexes
-                for(var key in contacts[i]){   
-                   if(fullName === name){ return key}             
-                };             
-            };
+            //loop through each object in the contacts array
+            for(var key in contacts[i]){
+                //declare name var that iterates through both array then object to return the names within the object
+                var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
+            }
+            //use an if statement to compare fullName to name
+            if(fullName === name){
+                return contacts[i];}
             
+        }                    
             
         },
         removeContact(contact){
             //use splice method to remove contact
             contacts.splice(contact, contact);
+        },
+
+        printAllContactsNames(){
+            var contactsString = "/n" + fullName;
+            return contactsString;
         }
     }
  
