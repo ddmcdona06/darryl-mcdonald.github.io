@@ -35,11 +35,11 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-    var obj = {};
-    obj.id = id,
-    obj.nameFirst = nameFirst,
-    obj.nameLast = nameLast;
-    return obj
+    var contact = {};
+    contact.id = id,
+    contact.nameFirst = nameFirst,
+    contact.nameLast = nameLast;
+    return contact
 } 
 
 

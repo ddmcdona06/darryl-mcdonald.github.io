@@ -50,8 +50,9 @@ function createStartsWithFilter(startsWith) {
     
     //return a function
     return function stringStart(string){
-        //use startswith function to determine if a given string starts with "startsWith"
-        return string.startsWith(startsWith)
+        if(string[0].toUpperCase() === startsWith.toUpperCase()){
+            return true;
+        } else {return false;}
         }  
     
     
@@ -68,8 +69,10 @@ function createEndsWithFilter(endsWith) {
 
     //return a function
     return function stringEnd(string){
-        //return if final  character equals endsWith 
-        return string.endsWith(endsWith)
+        //use if statement to compare last letter of string to last letter of endsWith
+        if(string[string.length - 1].toLowerCase() === endsWith.toLowerCase()){
+            return true;
+        } else {return false;}
     }
     
     
