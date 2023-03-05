@@ -76,7 +76,7 @@ function makeContactList() {
         },
         removeContact(contact){
             //use splice method to remove contact
-            contacts.splice(contact, contact);
+            contacts.splice(contact, 1);
         },
 
         printAllContactsNames(){
