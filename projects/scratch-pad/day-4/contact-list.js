@@ -79,7 +79,7 @@ function makeContactList() {
             contacts.splice(contact, 1);
         },
 
-        printAllContactsNames(){
+        printAllContactNames: function(){
             //loop through contacts array
             for(var i = 0; i < contacts.length; i++){
                 //loop through each object in the contacts array
@@ -87,8 +87,8 @@ function makeContactList() {
                     //declare name var that iterates through both array then object to return the names within the object
                     var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
                 }
-            //use split method with the new line operator as the a
-            return name.split("/n");
+            //
+            return name +="\n" + name;
         }
         }
     }
