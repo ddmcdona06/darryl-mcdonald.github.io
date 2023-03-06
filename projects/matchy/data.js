@@ -14,9 +14,9 @@
 //declare animal object
 var animal = {};
 //use dot notation assign a key:value pair
-animal.species = "gorilla";
+animal.species = "dog";
 //use bracket notation assign key name and a value
-animal["name"] = "Untamed";
+animal["name"] = "Shadow";
 //use dot notation to assign a key value pair with an empty array 
 animal.noises = [];
 //print to console
@@ -28,6 +28,24 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//declare var and assign an empty array
+var noises = [];
+//use bracket notation to assign string 
+noises[0] = "bark";
+//use push method to add another noise
+noises.push("howl");
+//use unshit method to add another noise
+noises.unshift("moan");
+//use bracket notation and length property to add value to end of array
+noises[noises.length] = "growl";
+//log length of noises
+console.log(noises.length);
+//log the last index without hard coding
+console.log(noises.length - 1);
+//log array 
+console.log(noises);
+
+
 
 
 
@@ -35,6 +53,10 @@ console.log(animal);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+//use bracket notation to assign noises to the animal object
+animal["noises"] = noises;
+//add another value to noises array
+animal.noises.push("whine");
 
 
 /* *******************************************************************
@@ -59,6 +81,39 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//declare var animals and assign to an array
+var animals = [];
+//push animal object into animals array
+animals.push(animal);
+//log animals
+console.log(animals);
+//declare var duck and assign it an object
+var duck = {
+  species: "duck",
+  name: 'Jerome',
+  noises: ['quack', 'honk', 'sneeze', 'woosh'],
+};
+//push duck object into animals
+animals.push(duck);
+//log animals
+console.log(animals);
+// declare var frog and assign an object
+var frog = {
+  species: "frog",
+  name: "Kermit",
+  noises: ['ribbit', 'boing'],
+};
+//declare var gorilla and assign an object
+var gorilla = {
+  species: "ape",
+  name: "George",
+  noises: ['grunt', 'howl'],
+};
+// push frog into animals array
+animals.push(frog);
+//push gorilla into animals array
+animals.push(gorilla);
+console.log(animals);
 
 
 
