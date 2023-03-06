@@ -11,6 +11,17 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//declare animal object
+var animal = {};
+//use dot notation assign a key:value pair
+animal.species = "gorilla";
+//use bracket notation assign key name and a value
+animal["name"] = "Untamed";
+//use dot notation to assign a key value pair with an empty array 
+animal.noises = [];
+//print to console
+console.log(animal);
+
 
 
 
