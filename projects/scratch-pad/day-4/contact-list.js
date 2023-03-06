@@ -80,10 +80,19 @@ function makeContactList() {
         },
 
         printAllContactsNames(){
-            var contactsString = "/n" + fullName;
-            return contactsString;
+            //loop through contacts array
+            for(var i = 0; i < contacts.length; i++){
+                //loop through each object in the contacts array
+                for(var key in contacts[i]){
+                    //declare name var that iterates through both array then object to return the names within the object
+                    var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
+                }
+            //use split method with the new line operator as the a
+            return name.split("/n");
+        }
         }
     }
+
  
 }
 
