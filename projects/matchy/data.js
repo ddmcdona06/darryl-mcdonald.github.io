@@ -121,6 +121,18 @@ console.log(animals);
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+//declare var friends and assign it an array
+var friends =[];
+//declare function get random
+function getRandom(){
+  //use math methods floor and random with max being the array length assign to friends
+  friends = Math.floor(Math.random() * animals.length);
+  //return friends
+  return friends;
+}
+//declare new friend object and assign it friends/getRandom function
+gorilla["friends"] = friends;
+
 
 
 /**
