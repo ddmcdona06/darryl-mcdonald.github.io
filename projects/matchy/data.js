@@ -126,12 +126,13 @@ var friends =[];
 //declare function get random
 function getRandom(){
   //use math methods floor and random with max being the array length assign to friends
-  friends = Math.floor(Math.random() * animals.length);
+  var friend = Math.floor(Math.random() * animals.length);
   //return friends
-  return friends;
+  return friends.push(friend);
 }
+console.log(friends);
 //declare new friend object and assign it friends/getRandom function
-gorilla["friends"] = friends;
+gorilla.friends = friends;
 
 
 
