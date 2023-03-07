@@ -24,16 +24,21 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     var arr = [];
-    while(start - 1 <= end){
-            return arr.push(start++);
-        
-    }    
 
+    //if statement comparing start to end
     if(start > end){
-        for(var i = start; i > end; i--){
+        for(var i = start; i >= end; i--){
             return arr.push(i);
+        } else if (start < end){            
+            //use for loop
+            for(var i = start; i <= end; i++){
+                return arr.push(i);
         }
     }
+}
+   
+   
+
 
 
     
