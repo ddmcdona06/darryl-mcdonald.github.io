@@ -79,11 +79,11 @@ function remove(animals, name){
 //////////////////////////////////////////////////////////////////////
 
 // declare function add with parameters animals array and animal object
-function add(animals, name){
+function add(animals, animal){
     var animal = {
-        species: 'bear',
-        name: 'Smokey',        
-    }    
+        species: '',
+        name: '',
+    }; 
     //loop through animals array
     for(var i = 0; i < animals.length; i++){
         //loop through animals objects
@@ -92,7 +92,7 @@ function add(animals, name){
             var namesObj = animals[i]["name"];
 }
         //if statement to compare name and nameObj, use length property to check if name and species have values
-        if(animal["species"].length > 0 && animal["name"].length > 0 && name !== namesObj){
+        if(animal["species"].length > 0 && animal["name"].length > 0 && !namesObj){
             return animals.push(animal);
         }
 }
