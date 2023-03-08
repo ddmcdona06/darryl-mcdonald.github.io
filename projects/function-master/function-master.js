@@ -3,7 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
+    return Object.values(object);
+  
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -27,6 +28,15 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
+    //use if statement
+    if(Array.isArray(collection)){
+        //return array
+        return "array";
+        //else if comparing collection to object
+    } else if(typeof collection === 'object'){
+        //return object
+        return 'object';
+    }
     
 }
 
@@ -35,6 +45,9 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
+        //use charAt, toUpperCase and .slice 
+        return string.charAt(0).toUpperCase() + string.slice(1);
+
     
 }
 
@@ -44,6 +57,7 @@ function capitalizeWord(string) {
 
 function capitalizeAllWords(string) {
     
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,6 +65,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+    
+    return "Welcome" + " " + object["name"].charAt(0).toUpperCase() + object.name.slice(1) + "!"
 
 }
 
@@ -59,6 +75,7 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
+    return object["name"].charAt(0).toUpperCase() + object.name.slice(1) + " " + "is a" + " " + object["species"].charAt(0).toUpperCase() + object.species.slice(1);
 
 }
 
@@ -67,6 +84,9 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    if(object.noises === true){
+        return object.noises.split(' ');
+    } else { return 'there are no noises'}
 
 }
 
