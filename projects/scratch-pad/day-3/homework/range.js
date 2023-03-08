@@ -25,17 +25,18 @@ function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     var arr = [];
 
-    //if statement comparing start to end
-    if(start > end){
-        for(var i = start; i >= end; i--){
-            return arr.push(i);
-        } else if (start < end){            
-            //use for loop
-            for(var i = start; i <= end; i++){
-                return arr.push(i);
-        }
+    //use while loop to iterate between two values
+    while(start <= end){
+    //push into array
+        arr.push(start);
+        //increment outer loop by 1
+        start++;
     }
-}
+    //return array
+    return arr;
+
+   
+
    
    
 
@@ -46,7 +47,6 @@ function range(start, end) {
     
     // YOUR CODE GOES ABOVE HERE //
 }
-
 
 
 
