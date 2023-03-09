@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+    // use values function
     return Object.values(object);
   
 } 
@@ -12,6 +13,10 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    //use object .keys  function
+    var arr = Object.keys(object);
+    //return using array join method
+    return arr.join(" ");    
 
 }
 
@@ -20,6 +25,16 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+    //declare an empty array
+    var arr = [];
+    //loop through object
+    for(var key in object){
+        //use if statement to search for string
+        if(typeof object[key] === 'string'){
+            object[key];
+        } 
+        return arr.join(" ");
+    }
     
 }
 
@@ -56,7 +71,13 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    //use plit function to create new array
+    var arr = string.split("");
+    //loop over array
+    for(let i = 0 ; i < arr.length; i++){
+       arr[i] =  arr[i][0].toUpperCase() + arr[i].slice(1)
+    }
+    return arr.join(" ");
     
 }
 
@@ -84,10 +105,13 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    //declare an empty array
+    var arrOne = [];
     if(object.noises === true){
-        return object.noises.split(' ');
-    } else { return 'there are no noises'}
-
+        return object["noises"].split(' ');
+    }
+    
+    return "there are no noises";
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -95,7 +119,16 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+    //declare array 
+    var arr = string.split(' ');
+    //loop through array
+    for(let i = 0; i < arr.length; i++){
+        //if statement to compare word with the other values
+        if(arr[i] === word){
+            return true;
+        } 
+    }
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -103,7 +136,10 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
+    // push method to push name directly into array
+    object["friends"].push(name);
 
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -111,7 +147,14 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    //loop through friends array
+    for(let i = 0; i < object["friends"].length; i++){
+        //if statement compares name with other values
+        if(object["friends"][i] === name){
+            return true;
+        }
+    }
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -119,6 +162,16 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+        //declare name as object.name
+        name = object["name"];
+
+        //loop through friends array
+        for(let i = 0; i < object["friends"].length; i++){        
+        //second for loop to iterate through array
+        for(let j = 0; j < array.length; j++){
+            //if state comparing names in object to names in array                    
+        }
+    }
 
 }
 
