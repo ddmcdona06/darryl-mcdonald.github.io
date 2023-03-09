@@ -10,6 +10,17 @@ function triangles(x) {//x = number of rows
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
+    //use for loop to iterate numbers 1 to 100
+    for (var i = 1; i <= 100; i++) {
+      //use if else if statements and comparison operators
+      if (i % 3 === 0 && i % 5 === 0) {
+          console.log('fizzbuzz');
+      } else if (i % 3 === 0) {
+          console.log('fizz');
+      } else if (i % 5 === 0) {
+          console.log('buzz');
+      }
+  }
   
 }
 

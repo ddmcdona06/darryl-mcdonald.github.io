@@ -14,19 +14,19 @@ function fizzBuzz() {
 
     // YOUR CODE GOES BELOW HERE //
     //use for loop to iterate numbers 1 to 100
-    for(var i = 1; i <= 100; i++){
+    for (var i = 1; i <= 100; i++) {
         //use if else if statements and comparison operators
-        if(i % 3 === 0 && i % 5 === 0){
+        if (i % 3 === 0 && i % 5 === 0) {
             console.log('FizzBuzz');
-        } else if(i % 3 === 0){
+        } else if (i % 3 === 0) {
             console.log('Fizz');
-        } else if(i % 5 === 0){
+        } else if (i % 5 === 0) {
             console.log('Buzz');
-        } else{
+        } else {
             console.log(i);
         }
     }
-  
+
 
     // YOUR CODE GOES ABOVE HERE //
 }
@@ -36,8 +36,8 @@ function fizzBuzz() {
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports.fizzBuzz = fizzBuzz
 }
