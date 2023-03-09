@@ -31,13 +31,15 @@ function valuesToString(object) {
     for(var key in object){
         //use if statement to search for string
         if(typeof object[key] === 'string'){
+            arr.push(object[key]);
 
         }
         
     }
      
-    return arr.push(object[key]).join(" ");    
+       return arr.join(" ");
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
@@ -73,7 +75,7 @@ function capitalizeWord(string) {
 
 function capitalizeAllWords(string) {
     //use plit function to create new array
-    var arr = string.split("");
+    var arr = string.split(" ");
     //loop over array
     for(let i = 0 ; i < arr.length; i++){
        arr[i] =  arr[i][0].toUpperCase() + arr[i].slice(1)
@@ -106,13 +108,12 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    //declare an empty array
-    var arrOne = [];
-    if(object.noises === true){
-        return object["noises"].split(' ');
-    }
+    //if statement looking for values at noises
+    if(Array.isArray(object.noises) && object.noises.length > 0){
+        return object.noises.join(" ");
+    } else {return "there are no noises"}
     
-    return "there are no noises";
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -148,13 +149,11 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-    //loop through friends array
-    for(let i = 0; i < object["friends"].length; i++){
-        //if statement compares name with other values
-        if(object["friends"][i] === name){
+    
+        if(Array.isArray(object["friends"]) && object["friends"].includes(name)){
             return true;
-        }
-    }
+            }
+
     return false;
 }
 
@@ -163,24 +162,41 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-        //declare name as object.name
-        name = object["name"];
-
-        //loop through friends array
-        for(let i = 0; i < object["friends"].length; i++){        
-        //second for loop to iterate through array
-        for(let j = 0; j < array.length; j++){
-            //if state comparing names in object to names in array                    
+    //declare empty arrays to push values into
+    var list = [];
+    var newArr = [];
+    var current = null;
+    //use for loop 
+    for(var i = 0; i < array.length; i++){
+        //if statement comparing name to names in arrays
+        if(name === array[i].name){
+            //assign value to current
+            current = array[i];
+            //push names into new array
+        } else{list.push(array[i].name);}
+    }
+    //if statement if no friends
+    if(current === null){return list;}
+    //loop through array list
+    for(var i = 0; i < list.length; i++){
+        //if statement 
+        if(current.friends.indexOf(list[i]) == -1){
+            //push names into newArr
+            newArr.push(list[i]);
         }
     }
 
+    return newArr;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function updateObject(object, key, value) {
+function updateObject(object, key, value) {    
+       
+    object[key] = value;
+    return object;
 
 }
 
@@ -189,6 +205,13 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+    for(var key in object){
+        for(var i = 0; i < array.length; i++){
+            if(key === array[i]){
+                 delete object[key];
+            } 
+        }
+    }
 
 }
 
@@ -197,6 +220,7 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+    return array.filter((item,index) => array.indexOf(item) === index); 
 
 }
 
