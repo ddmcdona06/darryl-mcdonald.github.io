@@ -31,11 +31,12 @@ function valuesToString(object) {
     for(var key in object){
         //use if statement to search for string
         if(typeof object[key] === 'string'){
-            object[key];
-        } 
-        return arr.join(" ");
+
+        }
+        
     }
-    
+     
+    return arr.push(object[key]).join(" ");    
 }
 
 //////////////////////////////////////////////////////////////////////
