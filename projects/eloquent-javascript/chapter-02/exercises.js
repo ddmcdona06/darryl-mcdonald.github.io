@@ -3,15 +3,19 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles(x) {//x = number of rows 
+function triangles(x) {//x = number of rows
+        for(var i = 0; i.length <= 7; i++){
+          i = "#";
+          console.log(i += '# ');
+        }  
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-    //use for loop to iterate numbers 1 to 100
-    for (var i = 1; i <= 100; i++) {
+    //use for loop to iterate numbers 1 to 15
+    for (var i = 1; i <= 15; i++) {
       //use if else if statements and comparison operators
       if (i % 3 === 0 && i % 5 === 0) {
           console.log('fizzbuzz');
@@ -19,7 +23,7 @@ function fizzBuzz() {
           console.log('fizz');
       } else if (i % 5 === 0) {
           console.log('buzz');
-      }
+      } else {console.log(i);}
   }
   
 }

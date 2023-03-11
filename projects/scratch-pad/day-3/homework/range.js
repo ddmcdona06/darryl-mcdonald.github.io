@@ -23,28 +23,20 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    var arr = [];
-
-    //use while loop to iterate between two values
-    while(start <= end){
-    //push into array
-        arr.push(start);
-        //increment outer loop by 1
-        start++;
-    }
-    //return array
-    return arr;
-
+    var collect = [];
+    //if statement
+    if(start < end){
+        for(let i = start; i <= end; i++){
+            collect.push(i);
+        }
+        } else if(start > end){
+            for(let j = end; j >= start; j--){
+                collect.push(j);
+            }
+        }
+        return collect;
    
 
-   
-   
-
-
-
-    
-    
-    
     // YOUR CODE GOES ABOVE HERE //
 }
 
