@@ -2,7 +2,11 @@
 // min /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function min() {
+function min(a, b) {
+  //use if else statement comparing a to b 
+  if(a < b){
+    return a;
+  } else {return b};
 
 }
 
@@ -10,7 +14,11 @@ function min() {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
+function isEven(num) {
+  //use if and % operator to determine if num is even
+  if(num % 2 === 0){
+    return true;
+  } else { return false;}
 
 }
 
@@ -18,7 +26,16 @@ function isEven() {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
+function countChars(string, char) {
+  var num = 0
+  //use for loop to loop through string
+  for(let i  = 0; i < string.length; i++){
+    //if statement comparing string values to char
+    if(string[i] === char){
+      num += 1; 
+    }
+  }
+  return num;
 
 }
 
@@ -26,7 +43,9 @@ function countChars() {
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
+function countBs(string) {
+//return count characters function with "B" as the input character
+  return countChars(string, "B");
 
 }
 
