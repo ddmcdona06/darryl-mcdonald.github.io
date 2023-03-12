@@ -32,8 +32,26 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard(x) {// x == number of rows and columns
+  //declare string 
+  var chess = "";
 
-  
+  //use for loop to iterate through rows
+  for(let i = 0; i <= x; i++){
+    //use for loop to iterate columns
+    for(let j = 1; j <= x; j++){
+      //use if statement for even inputs
+      if((i + j) % 2 === 0){
+        chess += " ";
+        //else for odd inputs
+      } else {
+        chess += "#"
+      }
+    }
+    //move to next row
+    chess += "\n";
+  }
+  //return chess
+  return chess;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
