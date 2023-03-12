@@ -29,9 +29,10 @@ function range(start, end) {
         for(let i = start; i <= end; i++){
             collect.push(i);
         }
+        
         } else if(start > end){
-            for(let j = end; j >= start; j--){
-                collect.push(j);
+            for(let i = start; i >= end; i--){
+                collect.push(i);
             }
         }
         return collect;
