@@ -4,9 +4,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(x) {//x = number of rows
-        for(var i = 0; i.length <= 7; i++){
-          i = "#";
-          console.log(i += '# ');
+        for(let i = "#"; i.length <= x; i += "#"){
+          console.log(i);
         }  
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,6 +33,7 @@ function fizzBuzz() {
 
 function drawChessboard(x) {// x == number of rows and columns
 
+  
 }
 
 ////////////////////////////////////////////////////////////////////////////////
