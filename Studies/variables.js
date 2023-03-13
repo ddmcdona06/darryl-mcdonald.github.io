@@ -29,6 +29,8 @@
  *      ex. snowball = "Jungle Juice";
  *      console.log(snowball);// prints -> "Jungle Juice"
  * 
+ * 4. Hoisting:
+ * 
  *  
  * 
  * 
