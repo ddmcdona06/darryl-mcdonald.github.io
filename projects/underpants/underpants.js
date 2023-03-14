@@ -75,6 +75,31 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(arr, num){
+    //declare an empty array
+    var empty = [];
+    //if statement to ceck if its an array
+    if(!Array.isArray(arr)){
+      //return variable  empty
+      return empty;
+      //if statement if num is undefined or is not a number
+    } else if(num === undefined || !num){
+      //return the first index in arr
+      return arr[0];
+      //if statement for any number below 0
+    } else if(num < 0){
+      //return empty variable
+      return empty;
+      //if statement if num is greater than the length of the array
+    } else if(num > arr.length){
+      //return the array
+      return arr;
+      //otherwise return the first number of indexes in arr
+    } else{
+    return arr.slice(0, num)
+    }
+  }
+
 
 /** _.last
 * Arguments:
