@@ -80,17 +80,16 @@ function makeContactList() {
         },
 
         printAllContactNames: function(){
+            var list = "";  
             //loop through contacts array
             for(var i = 0; i < contacts.length; i++){
-                //loop through each object in the contacts array
-                for(var key in contacts[i]){
-                    //declare name var that iterates through both array then object to return the names within the object
-                    var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
-                }
-            //
-            return name +="\n" + name;
+               var name = contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"];
+              list += name + "\n";
         }
+    
+    return list.slice(0,-1);
         }
+        
     }
 
  
