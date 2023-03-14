@@ -174,6 +174,16 @@ _.last = function(arr, num){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
+_.contains = function(array, value){
+  var here = false;
+  if(!value){
+    return false;
+  }
+  for(let i = 0; i < array.length; i++){    
+    array[i] === value ? here = true: here;
+  }
+  return here;
+}
 
 
 /** _.each
