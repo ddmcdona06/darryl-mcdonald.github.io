@@ -36,9 +36,9 @@ function drawChessboard(x) {// x == number of rows and columns
   var chess = "";
 
   //use for loop to iterate through rows
-  for(let i = ; i <= x; i++){
+  for(let i = 0; i < x; i++){
     //use for loop to iterate through rows to assign values
-    for(let j = 1; j <= x; j++){
+    for(let j = 0; j < x; j++){
       //use if statement for even inputs
       if((i + j) % 2 === 0){
         chess += " ";
@@ -50,8 +50,9 @@ function drawChessboard(x) {// x == number of rows and columns
     //move to next row
     chess += "\n";
   }
+  //chess = chess.slice(0, -1);
   //return chess
-  console.log(chess.trim());
+  console.log(chess);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
