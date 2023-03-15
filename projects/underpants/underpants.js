@@ -247,6 +247,20 @@ _.each = function(collection, func){
 *   use _.each in your implementation
 */
 
+_.filter = function(array, func){
+  //declare new array
+  let newArr = [];
+  //use for loop to iterate through array
+  for(let i = 0; i < array.length; i++){
+    //if statement invoking function for each element in array
+    if(func(array[i], i, array)){
+      //assign new array to value of elements that return true
+      newArr = func(array[i], i, array);
+      return newArr; 
+    } 
+    }
+  return false;
+  }
 
 /** _.reject
 * Arguments:
@@ -415,6 +429,27 @@ _.every = function(collection, func){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(array, func, seed){
+  //create result variable
+  let result;
+  //determine if seed is undefined
+  if(seed === undefined){
+    result = array[0];
+    //iterate using a for loop
+    for(let i = 1; i < array.length; i++){
+      result = func(result, array[i], i, array);
+    }
+  } else {//else seed is defined
+    result = seed;
+    //iterate with for loop
+    for(let i = 0; i < array.length; i++){
+      // reassign result
+      result = func(result, array[i], i, array);
+    }
+  } 
+  //return result
+  return result;
+}
 
 
 /** _.extend
