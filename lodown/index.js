@@ -88,10 +88,10 @@ function first(arr, num){
   module.exports.first = first;
 
   /**
-   * 
+   * filter: Designed to return a new array of values found true within the func
    * @param {Array of indexes} array over which to iterate
    * @param {Function} action: function to be applied to each value in the array
-   * @returns 
+   * @returns a new array of values found to be true when called into func 
    */
   function filter(array, func){
     //declare new array
@@ -107,4 +107,25 @@ function first(arr, num){
     return newArr;
     }
     module.exports.filter = filter;
+
+    /**
+     * reject: Designed to return a new array of values found false within func
+     * @param {Array} array over which to iterate
+     * @param {Function} action: function to be applied to each value in the array
+     * @returns a new array of values found to be false when called into function
+     */
+    function reject(array, func){
+        //declare new array
+         let newArr = [];
+         //use for loop to iterate through array
+         for(let i = 0; i < array.length; i++){
+           //if statement invoking function for each element in array
+           if(!func(array[i], i, array)){
+             //assign new array to value of elements that return true
+             newArr.push(array[i]); 
+           } 
+           }
+         return newArr;
+         }
+         module.exports.reject = reject;
 
