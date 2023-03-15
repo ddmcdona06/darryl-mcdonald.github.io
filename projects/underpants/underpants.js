@@ -255,11 +255,10 @@ _.filter = function(array, func){
     //if statement invoking function for each element in array
     if(func(array[i], i, array)){
       //assign new array to value of elements that return true
-      newArr = func(array[i], i, array);
-      return newArr; 
+      newArr.push(array[i]); 
     } 
     }
-  return false;
+  return newArr;
   }
 
 /** _.reject
