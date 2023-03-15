@@ -332,6 +332,47 @@ _.each = function(collection, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func){
+  //determine if func exist
+  if(!func){
+    //determine if array
+    if(Array.isArray(collection)){
+      //iterate 
+      for(let i = 0; i < collection.length; i++){
+        if(!collection[i]){
+          return false;
+        }
+      }
+    } else {
+      for(let key in collection){
+        //determine if curent value is not true
+        if(!collection[key]){
+          return false;
+        }
+      }
+    }
+  } else {
+    //determine if array
+    if(Array.isArray(collection)){
+      //iterate
+      for(let i = 0; i < collection.length; i++){
+        //determine result of invoking test func on curren element, index, and collection
+        if(!func(collection[i], i, collection)){
+          return false;
+        }
+      }
+    } else{
+      //determine if result of invoking func on value,key,and collection is falsy
+      for(let key in collection){
+        if(!func(collection[key], key, collection)){
+          return false;
+        }
+      }
+    }
+  }
+  return true;
+}
+
 
 
 /** _.some
