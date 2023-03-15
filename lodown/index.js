@@ -57,7 +57,7 @@ module.exports.typeOf = typeOf;
 
 /**
  * first: Designed to return the first <number> of elements in the <array>
- * @param {Array} arr 
+ * @param {Array} array over which to iterate
  * @param {Numeric value} num 
  * @returns 
  */
@@ -86,4 +86,25 @@ function first(arr, num){
     }
   }
   module.exports.first = first;
+
+  /**
+   * 
+   * @param {Array of indexes} array over which to iterate
+   * @param {Function} action: function to be applied to each value in the array
+   * @returns 
+   */
+  function filter(array, func){
+    //declare new array
+    let newArr = [];
+    //use for loop to iterate through array
+    for(let i = 0; i < array.length; i++){
+      //if statement invoking function for each element in array
+      if(func(array[i], i, array)){
+        //assign new array to value of elements that return true
+        newArr.push(array[i]); 
+      } 
+      }
+    return newArr;
+    }
+    module.exports.filter = filter;
 
