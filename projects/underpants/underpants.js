@@ -380,6 +380,21 @@ _.map = function(collection, func){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+_.pluck = function(array, property){
+  //delcare new array
+  let newArr =[];
+  //loop through array
+  for(let i = 0; i < array.length; i++){
+    //loop through object
+    for(let key in array[i]){
+      //if statement comparing property to key
+      if(property === key){
+         newArr.push(_.map(array[i][key], func()));
+      }
+    }
+  }  
+  return newArr;
+}
 
 
 /** _.every

@@ -37,3 +37,7 @@
 1) In terminal, type => git add -A
 2) In termianl, type => git commit -m "description"
 3) In termianl, type => git push
+
+## How to cd back into correct workspace (if terminal reads /workspace)
+1) In terminal, type => cd darryl-mcdonald.github.io
+2) Run git command
