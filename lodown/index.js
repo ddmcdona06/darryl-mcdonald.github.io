@@ -187,3 +187,19 @@ function first(arr, num){
     }
     module.exports.map = map;
 
+    /**
+     * pluck: Designed to return an array with the value of property at each element
+     * @param {Array} array of objects
+     * @param {Any value} prop: the key name
+     * @returns an array of keys values
+     */
+    function pluck(array, prop){
+      //declare new array to value of map function
+      let newArr = _.map(array, function(obj){
+        return obj[prop];
+      })
+       //return new array
+      return newArr;
+    }
+    module.exports.pluck = pluck
+
