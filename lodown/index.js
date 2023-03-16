@@ -201,5 +201,118 @@ function first(arr, num){
        //return new array
       return newArr;
     }
-    module.exports.pluck = pluck
+    module.exports.pluck = pluck;
+
+    /**
+     * 
+     * @param {*} collection 
+     * @param {*} func 
+     * @returns 
+     */
+    function every(collection, func){
+      //determine if func exist
+      if(!func){
+        //determine if array
+        if(Array.isArray(collection)){
+          //iterate 
+          for(let i = 0; i < collection.length; i++){
+            if(!collection[i]){
+              return false;
+            }
+          }
+        } else {
+          for(let key in collection){
+            //determine if curent value is not true
+            if(!collection[key]){
+              return false;
+            }
+          }
+        }
+      } else {
+        //determine if array
+        if(Array.isArray(collection)){
+          //iterate
+          for(let i = 0; i < collection.length; i++){
+            //determine result of invoking test func on curren element, index, and collection
+            if(!func(collection[i], i, collection)){
+              return false;
+            }
+          }
+        } else{
+          //determine if result of invoking func on value,key,and collection is falsy
+          for(let key in collection){
+            if(!func(collection[key], key, collection)){
+              return false;
+            }
+          }
+        }
+      }
+      return true;
+    }
+    module.exports.every = every;
+    
+    /**
+     * 
+     * @param {*} collection 
+     * @param {*} func 
+     * @returns 
+     */
+    function some(collection, func){
+      //determine if func exist
+      if(!func){
+        //determine if array
+        if(Array.isArray(collection)){
+          //iterate 
+          for(let i = 0; i < collection.length; i++){
+            if(collection[i]){
+              return true;
+            }
+          }
+        } else {
+          for(let key in collection){
+            //determine if curent value is not true
+            if(collection[key]){
+              return true;
+            }
+          }
+        }
+      } else {
+        //determine if array
+        if(Array.isArray(collection)){
+          //iterate
+          for(let i = 0; i < collection.length; i++){
+            //determine result of invoking test func on curren element, index, and collection
+            if(func(collection[i], i, collection)){
+              return true;
+            }
+          }
+        } else{
+          //determine if result of invoking func on value,key,and collection is falsy
+          for(let key in collection){
+            if(func(collection[key], key, collection)){
+              return true;
+            }
+          }
+        }
+      }
+      return false;
+    }
+module.exports.some = some;
+
+/**
+ * extend: Designed to add values to first object from all other object parameters
+ * @param {Object} object1: any value that resolves to an object
+ * @param {Object} object2: any value that resolves to an object 
+ * @param  {...any Object} object: any number of remaining object parameters 
+ * @returns the first object inclusive of all other objects key values in the parameter
+ */
+function extend(object1, object2, ...object){
+
+  //use object.assign method to assign values of other parameters to object1
+  Object.assign(object1, object2, ...object);
+
+  //return object1
+  return object1;
+}
+module.exports.extend = extend;
 
