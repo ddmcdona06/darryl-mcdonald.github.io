@@ -356,14 +356,14 @@ _.map = function(collection, func){
     //use for loop to acces collection
     for(let i = 0; i < collection.length; i++){
       //return the result of function into a new array
-      newArr = func(collection[i], i, collection);
+      newArr.push(func(collection[i], i, collection));
     }
   } else {
     //loop through object
     for(let key in collection){
       //return the result of function into a new array
-      newArr = func(collection[key], key, collection)
-    }
+      newArr.push(func(collection[key], key, collection));
+    }    
   }
   //return the new array
   return newArr;

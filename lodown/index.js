@@ -159,3 +159,31 @@ function first(arr, num){
     }
     module.exports.partition = partition;
 
+    /**
+     * map: Designed to take an array and return the values of a function call within a new array
+     * @param {Array or Object} collection of values 
+     * @param {Function} action: to be applied to every index in an array
+     * @returns a new array of values called by the function
+     */
+    function map(collection, func){
+      //declare an empty array
+      let newArr = [];
+      //determine if its array
+      if(Array.isArray(collection)){
+        //use for loop to acces collection
+        for(let i = 0; i < collection.length; i++){
+          //return the result of function into a new array
+          newArr.push(func(collection[i], i, collection));
+        }
+      } else {
+        //loop through object
+        for(let key in collection){
+          //return the result of function into a new array
+          newArr.push(func(collection[key], key, collection));
+        }    
+      }
+      //return the new array
+      return newArr;
+    }
+    module.exports.map = map;
+
