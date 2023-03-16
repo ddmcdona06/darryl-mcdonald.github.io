@@ -308,6 +308,29 @@ _.reject = function(array, func){
 }
 */
 
+_.partition = function(array, func){
+  //declare big array
+  let bigArr = [];
+  //declare new array for truthy 
+    let newArr = [];
+  //declare new array for falsy
+  let newArr2 = [];
+    //use for loop to iterate through array
+    for(let i = 0; i < array.length; i++){
+      //if statement invoking function for each element in array
+      if(func(array[i], i, array)){
+        //assign new array to value of elements that return true
+        newArr.push(array[i]);        
+      } else if(!func(array[i], i, array)){
+        //assign new array to value of elements that return true
+        newArr2.push(array[i]);      
+      }  
+      }
+  bigArr.push(newArr);
+  bigArr.push(newArr2);
+  return bigArr;
+}
+
 
 /** _.map
 * Arguments:
