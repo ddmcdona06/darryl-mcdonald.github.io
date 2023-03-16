@@ -243,6 +243,12 @@ _.each = function(collection, func){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
+_.unique = function(array){
+  let newArr = array.filter(function(value, index){
+    return array.indexOf(value) === index;
+  });
+  return newArr;
+}
 
 
 /** _.filter
