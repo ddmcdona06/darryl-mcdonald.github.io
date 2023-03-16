@@ -338,3 +338,15 @@ function indexOf(array, value){
 }
 module.exports.indexOf = indexOf;
 
+/**
+ * unique: Designed to return an array with no duplicate values
+ * @param {Array} array of any values
+ * @returns a new array of unique values
+ */
+function unique(array){
+  let newArr = array.filter(function(value, index){
+    return array.indexOf(value) === index;
+  });
+  return newArr;
+}
+module.exports.unique = unique;
