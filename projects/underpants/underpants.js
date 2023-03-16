@@ -474,6 +474,46 @@ _.every = function(collection, func){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+_.some = function(collection, func){
+  //determine if func exist
+  if(!func){
+    //determine if array
+    if(Array.isArray(collection)){
+      //iterate 
+      for(let i = 0; i < collection.length; i++){
+        if(collection[i]){
+          return true;
+        }
+      }
+    } else {
+      for(let key in collection){
+        //determine if curent value is not true
+        if(collection[key]){
+          return true;
+        }
+      }
+    }
+  } else {
+    //determine if array
+    if(Array.isArray(collection)){
+      //iterate
+      for(let i = 0; i < collection.length; i++){
+        //determine result of invoking test func on curren element, index, and collection
+        if(func(collection[i], i, collection)){
+          return true;
+        }
+      }
+    } else{
+      //determine if result of invoking func on value,key,and collection is falsy
+      for(let key in collection){
+        if(func(collection[key], key, collection)){
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
 
 
 /** _.reduce
