@@ -348,6 +348,27 @@ _.partition = function(array, func){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func){
+  //declare an empty array
+  let newArr = [];
+  //determine if its array
+  if(Array.isArray(collection)){
+    //use for loop to acces collection
+    for(let i = 0; i < collection.length; i++){
+      //return the result of function into a new array
+      newArr = func(collection[i], i, collection);
+    }
+  } else {
+    //loop through object
+    for(let key in collection){
+      //return the result of function into a new array
+      newArr = func(collection[key], key, collection)
+    }
+  }
+  //return the new array
+  return newArr;
+}
+
 
 /** _.pluck
 * Arguments:
