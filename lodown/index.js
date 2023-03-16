@@ -204,10 +204,10 @@ function first(arr, num){
     module.exports.pluck = pluck;
 
     /**
-     * 
-     * @param {*} collection 
-     * @param {*} func 
-     * @returns 
+     * every: Designed to take in a loop through a collection called by a function that return true or false values
+     * @param {Array or Object} collection of values
+     * @param {Function} action: determines if the values at eahc element of collection are truthy or falsey
+     * @returns true if every element is true, false otherwise
      */
     function every(collection, func){
       //determine if func exist
@@ -252,10 +252,10 @@ function first(arr, num){
     module.exports.every = every;
     
     /**
-     * 
-     * @param {*} collection 
-     * @param {*} func 
-     * @returns 
+     * some: Designed to take in a loop through a collection called by a function that return true or false values
+     * @param {Array or Object} collection of values
+     * @param {Function} action: determines if the values at eahc element of collection are truthy or falsey
+     * @returns false if every element is false, othewise true
      */
     function some(collection, func){
       //determine if func exist
