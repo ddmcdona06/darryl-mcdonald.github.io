@@ -129,3 +129,33 @@ function first(arr, num){
          }
          module.exports.reject = reject;
 
+    /**
+     * partition: Designed to return an array of arays
+     * @param {Array} array over which to iterate
+     * @param {Function} action: function to be applied to each value in array
+     * @returns an array with both truthy and falsey values as separate indexes 
+     */
+    function partition (array, func){
+      //declare big array
+      let bigArr = [];
+      //declare new array for truthy 
+        let newArr = [];
+      //declare new array for falsy
+      let newArr2 = [];
+        //use for loop to iterate through array
+        for(let i = 0; i < array.length; i++){
+          //if statement invoking function for each element in array
+          if(func(array[i], i, array)){
+            //assign new array to value of elements that return true
+            newArr.push(array[i]);        
+          } else if(!func(array[i], i, array)){
+            //assign new array to value of elements that return true
+            newArr2.push(array[i]);      
+          }  
+          }
+      bigArr.push(newArr);
+      bigArr.push(newArr2);
+      return bigArr;
+    }
+    module.exports.partition = partition;
+
