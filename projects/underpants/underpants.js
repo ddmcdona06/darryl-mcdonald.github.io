@@ -158,6 +158,20 @@ _.last = function(arr, num){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
+_.indexOf = function(array, value){
+  //declare variale to equal -1
+  let neg1 = -1;
+  //for loop to access array
+  for(let i = 0; i < array.length; i++){
+    //if statement comparing var element at array index
+    if(array[i] === value){
+      //return inside if statement to return only when it is first true
+      return i;
+    }
+  }
+  //return var neg1
+ return neg1;
+} 
 
 
 /** _.contains
