@@ -59,7 +59,7 @@ module.exports.typeOf = typeOf;
  * first: Designed to return the first <number> of elements in the <array>
  * @param {Array} array over which to iterate
  * @param {Numeric value} num 
- * @returns 
+ * @returns array with only the first <number> of elements
  */
 function first(arr, num){
     //declare an empty array
@@ -350,3 +350,83 @@ function unique(array){
   return newArr;
 }
 module.exports.unique = unique;
+
+/**
+ * last: Designed to return the last <number> of elements in an array
+ * @param {Array} any value over which to iterate
+ * @param {Number} any numeric value
+ * @returns array with only the last <number> of elements
+ */
+function last(arr, num){
+  //declare an empty array
+  var empty = [];
+  //if statement to ceck if its an array
+  if(!Array.isArray(arr)){
+    //return variable  empty
+    return empty;
+    //if statement if num is undefined or is not a number
+  } else if(num === undefined || !num){
+    //return the last index in arr
+    return arr[arr.length - 1];
+    //if statement for any number below 0
+  } else if(num < 0){
+    //return empty variable
+    return empty;
+    //if statement if num is greater than the length of the array
+  } else if(num > arr.length){
+    //return the array
+    return arr;
+    //otherwise return the last number of indexes in arr
+  } else{
+  return arr.slice(arr.length - num)
+  }
+}
+module.exports.last = last;
+
+/**
+ * contains: Determines if an array contains a value 
+ * @param {Array} array of values 
+ * @param {Value} any value 
+ * @returns true if array contains value, false otherwise
+ */
+function contains(array, value){
+  var here = false;
+  if(!value){
+    return false;
+  }
+  for(let i = 0; i < array.length; i++){    
+    array[i] === value ? here = true: here;
+  }
+  return here;
+}
+module.exports.contains = contains;
+
+/**
+ * reduce: to reduce the size of the array to a single value
+ * @param {Array} array of values
+ * @param {Function} action: passes every element in array passing the arguments
+ * @param {Value} seed valued as the previous sult of the function call
+ * @returns return the final value of the function call
+ */
+function reduce(array, func, seed){
+  //create result variable
+  let result;
+  //determine if seed is undefined
+  if(seed === undefined){
+    result = array[0];
+    //iterate using a for loop
+    for(let i = 1; i < array.length; i++){
+      result = func(result, array[i], i, array);
+    }
+  } else {//else seed is defined
+    result = seed;
+    //iterate with for loop
+    for(let i = 0; i < array.length; i++){
+      // reassign result
+      result = func(result, array[i], i, array);
+    }
+  } 
+  //return result
+  return result;
+}
+module.exports.reduce = reduce;
