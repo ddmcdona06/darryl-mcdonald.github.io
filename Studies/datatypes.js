@@ -21,7 +21,7 @@
     - Infinity: a global numeric value representing -infinity
     
   2. Complex: takes on multiple values grouped together, are passed to functions w/o a value(By Reference)
-    - Array: indexed list-like objects -> [value,value]
+    - Array: indexed list-like objects -> ["a", 16, true, {object}, null]
     - Object: stores keyed collections -> {key:value, key:value}
     - Function: a set of statements that performs a task or calculates a value -> function(){a + b}
  */
