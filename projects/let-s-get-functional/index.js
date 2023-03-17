@@ -78,7 +78,23 @@ var youngestCustomer = function(array){
       return youngest;
 }
 
-var averageBalance;
+var averageBalance = function(array){
+    //declare empty array
+    let empty = [];
+    //declare var for total
+    let total = 0;
+    //declare var for average
+    let average = 0;
+    //use for loop to access array
+    for(let i = 0; i < array.length; i++){
+         empty.push(array[i]["balance"]);
+    }
+    //use for loop to iterate through new array
+    for(let j = 0; j < empty.length; j++){
+        total += empty[j];    }
+    average = total / empty.length;
+    return average;
+}
 
 var firstLetterCount;
 
