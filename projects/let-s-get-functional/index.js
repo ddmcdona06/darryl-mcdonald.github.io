@@ -40,9 +40,43 @@ var femaleCount = function(array){
     return females;   
 }
 
-var oldestCustomer;
+var oldestCustomer = function(array){
+    //declare output string
+    let oldest = "";
+    //declare variable to equal a number
+    let age = 0;
+    //loop through array
+    for(let i = 0; i < array.length; i++){
+        //if statement comparing age values 
+        if(array[i]["age"] > age){
+            age = array[i]["age"];
+        }
+        //if statement if you are the oldest
+        if(array[i]["age"] === age){
+            oldest = array[i]["name"];
+        }
+    }
+    return oldest;
+}
 
-var youngestCustomer;
+var youngestCustomer = function(array){
+      //declare output string
+      let youngest = "";
+      //declare variable to equal a number
+      let age = 0;
+      //loop through array
+      for(let i = 0; i < array.length; i++){
+          //if statement comparing age values 
+          if(array[i]["age"] < age){
+              age = array[i]["age"];
+          }
+          //if statement if you are the youngest
+          if(array[i]["age"] === age){
+              youngest = array[i]["name"];
+          }
+      }
+      return youngest;
+}
 
 var averageBalance;
 
