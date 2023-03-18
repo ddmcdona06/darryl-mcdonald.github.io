@@ -96,7 +96,24 @@ var averageBalance = function(array){
     return average;
 }
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter){
+    //declare num with a 0 value
+  let num = 0;
+  //declare an empty array
+  let newArr = [];
+  //use for loop to iterate through array
+  for(let i = 0; i < array.length; i++){
+    // use if statement to compare letter to first character in name key/value pair
+    if(array[i]["name"].charAt(0) === letter){
+      //push contact into new array
+      newArr.push(array[i])
+  }
+  } 
+  //declare num to equal the length of the new array
+  num = newArr.length
+  //return num
+  return num;
+}
 
 var friendFirstLetterCount;
 
