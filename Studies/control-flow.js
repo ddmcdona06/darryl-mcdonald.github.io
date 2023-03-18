@@ -23,4 +23,9 @@ The function could also include a loop, which iterates through all of the fields
 Looking back at the code in the if and else sections, the lines promptUser and submitForm could also be calls to other functions in the script 
 As you can see, control structures can dictate complex flows of processing even with only a few lines of code
 Control flow means that when you read a script, you must not only read from start to finish but also look at program structure and how it affects order of execution
+
+    1: If statements
+    2: Else/If
+    3: Else
+    4: Switch statements
  */

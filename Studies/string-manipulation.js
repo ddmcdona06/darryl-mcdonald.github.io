@@ -6,6 +6,8 @@
 
  *0: String Manipulation:
 
+  1: Methods
+
   .length() : returns the length of a string
     ex. let name = "Darryl";
         let length = name.length -> //6
@@ -71,6 +73,9 @@
   .split() : Divides a string into an ordered list of two or more substrings and returns it
     ex. let text = "Hello";
     const myArr = text.split("") -> // [H, E, L, L, O]
+
+  2: Operators:
+    
 
 
  */

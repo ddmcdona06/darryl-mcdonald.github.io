@@ -1,7 +1,7 @@
 /**
  * 0: Loops
  * 
- * 1. for - loops through a block of code a number of times
+ * 1. for-loops through a block of code a number of times
  *      - The for statement creates a loop with 3 optional expressions:
  *           ex. for(expression 1; expression 2; expression 3) {// code block to be executed}
  * 
@@ -15,6 +15,7 @@
         - Expression 3 is executed (every time) after the code block has been executed
             *expression 3 increments the value of the initial variable*
             *expression 3 can do anything like negative increment (i--), positive increment (i++), or anything else*
+                ex. for(let i = array.length; i > 0; i--){codeblock}
 
  * 2. for/in - loops through the properties of an object
         - for(key in object) {// code block to be executed}

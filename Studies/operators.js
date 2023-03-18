@@ -45,4 +45,7 @@
     delete : deletes a specific index of an array or specific property of an object
     typeof: returns a string that is the type of the operand
     void: discards a return value as an expression
+
+  6. Ternary operator:
+    
  */
