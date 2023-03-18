@@ -104,7 +104,7 @@ var firstLetterCount = function(array, letter){
   //use for loop to iterate through array
   for(let i = 0; i < array.length; i++){
     // use if statement to compare letter to first character in name key/value pair
-    if(array[i]["name"].charAt(0) === letter){
+    if(array[i]["name"].charAt(0) === letter.toUpperCase()){
       //push contact into new array
       newArr.push(array[i])
   }
