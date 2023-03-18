@@ -31,7 +31,13 @@
  * 
  * 4. Hoisting:
  * 
- *  
+ *  - refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code
+ *  - Being able to use a variable's value in its scope before the line it is declared ("Value hoisting")
+ *  - Being able to reference a variable in its scope before the line it is declared, without throwing a ReferenceError, but the value is always undefined ("Declaration hoisting")
+ *  - The declaration of the variable causes behavior changes in its scope before the line in which it is declared
+ *  - The four function declarations are hoisted with type 1 behavior
+ *  - var declaration is hoisted with type 2 behavior 
+ *  - let, const, and class declarations (also collectively called lexical declarations) are hoisted with type 3 behavior
  * 
  * 
  */

@@ -115,7 +115,9 @@ var firstLetterCount = function(array, letter){
   return num;
 }
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter){
+
+};
 
 var friendsCount;
 
