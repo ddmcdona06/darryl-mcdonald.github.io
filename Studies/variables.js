@@ -39,5 +39,40 @@
  *  - var declaration is hoisted with type 2 behavior 
  *  - let, const, and class declarations (also collectively called lexical declarations) are hoisted with type 3 behavior
  * 
- * 
+ * Examples: 
+ */
+//Declaration:
+var myName; console.log(myName) // undefined
+
+let age; console.log(age) // undefined
+
+// *const has to be assigned*
+
+//Assignment:
+myName = "Darryl"; console.log(myName) // Darryl
+
+age = 40; console.log(age) // 40
+
+const pet = false; console.log(pet) // false
+
+//Reassignment:
+myName = "Dan"; console.log(myName) // Dan
+
+age = 29; console.log(age) // 29
+
+// *const cannot be reassigned*
+
+//Hoisting:
+
+const x = 1;
+{
+  console.log(x); // ReferenceError
+  const x = 2;
+}
+
+/**
+ * If the const x = 2 declaration is not hoisted at all (as in, it only comes into effect when it's executed),
+ * then the console.log(x) statement should be able to read the x value from the upper scope.
+ * However, because the const declaration still "taints" the entire scope it's defined in, 
+ * the console.log(x) statement reads the x from the const x = 2 declaration instead, which is not yet initialized, and throws a ReferenceError
  */
