@@ -24,8 +24,57 @@ Looking back at the code in the if and else sections, the lines promptUser and s
 As you can see, control structures can dictate complex flows of processing even with only a few lines of code
 Control flow means that when you read a script, you must not only read from start to finish but also look at program structure and how it affects order of execution
 
-    1: If statements
-    2: Else/If
+    1:Conditional Statements
+
+    A: If statements
+        - Use the if statement to specify a block of JavaScript code to be executed if a condition is true
+
+    B: Else/If
+        - Use the else if statement to specify a new condition if the first condition is false
+
     3: Else
+        - Use the else statement to specify a block of code to be executed if the condition is false
+
     4: Switch statements
+        - Use the switch statement to select one of many code blocks to be executed
+
+Examples:
  */
+
+// If Statements
+let hours = 6;
+if (hours < 18) {
+    greeting = "Good day"; // "Good day"
+  }
+
+// Else Statemants
+let hour = 23
+if (hour < 18) {
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening"; // "Good evening"
+  }
+
+// Else/If Statements
+let time = 15;
+if (time < 10) {
+    greeting = "Good morning";
+  } else if (time < 20) {
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening"; // "Good day"
+  }
+
+// Switch Statement
+const Animal = "Giraffe";
+switch (Animal) {
+  case "Cow":
+  case "Giraffe":
+  case "Dog":
+  case "Pig":
+    console.log("This animal is not extinct.");
+    break;
+  case "Dinosaur":
+  default:
+    console.log("This animal is extinct.");
+} //"This animal is not extinct."

@@ -51,4 +51,8 @@
             i++;}
             while (i < 10); 
  * 
+Examples:
  */
+
+// For Loop
+for(let i = 0; i < Array.length; i++)
