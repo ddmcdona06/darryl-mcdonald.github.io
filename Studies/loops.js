@@ -55,4 +55,22 @@ Examples:
  */
 
 // For Loop
-for(let i = 0; i < Array.length; i++)
+for(let i = 0; i < Array.length; i++){
+    return array[i] // incremental loop
+};
+
+for(let i = array.length; i > 0; i--){
+    return array[i] // decremental loop
+};
+
+// For/In Loop
+for(let key in object){
+    return object[key] // loop through an object literal
+}
+
+// While Loop
+let i = 8;
+while (i < 10) {
+    text += "The number is " + i;
+    i++;
+  } //"The number is 8"
