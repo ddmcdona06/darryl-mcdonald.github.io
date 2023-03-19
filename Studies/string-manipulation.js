@@ -75,7 +75,22 @@
     const myArr = text.split("") -> // [H, E, L, L, O]
 
   2: Operators:
-    
+      - String operators concatenate values.
+      ex. string1 + string2	Concatenates string1 and string2 so the beginning character of string2 follows the ending character of string1.
+      ex. string1 += string2	Concatenates string1 and string2, and assigns the result to string1.
 
-
+Examples:
  */
+
+// Length
+let myName = "Darryl";
+console.log( myName.length); //6
+
+// Slice
+let fruit = "Apple, Banana, Kiwi";
+console.log(fruit.slice(7, 13)); // "Banana"
+
+// Plus Operator
+let text1 = "Hello";
+let text2 = "World";
+console.log(text1 + " " + text2); // "Hello World"
