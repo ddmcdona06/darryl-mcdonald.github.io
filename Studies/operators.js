@@ -47,5 +47,42 @@
     void: discards a return value as an expression
 
   6. Ternary operator:
-    
+    - The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?)
+    - Then an expression to execute if the condition is truthy followed by a colon (:)
+    - And finally the expression to execute if the condition is falsy 
+    - This operator is frequently used as an alternative to an if...else statement.    
+      syntax: condition ? exprIfTrue : exprIfFalse
+
+  Examples:
  */
+
+  // Assignment
+  let x = 10;
+  x += 5; console.log(x) // 15
+
+  // Arithmatic
+  let a = 3;
+  let b = (100 + 50) * a; console.log(b) // 450
+
+  // Comaprison
+  let c = 5;
+  let d = 8;
+  if(c < d){
+    console.log(true); // true
+  };
+
+  // Logical
+  let e = 8;
+  let f = 10;
+  if(e > 5 && f < 20){
+    console.log("decent number") // decent number
+  };
+
+  // Unary 
+  let value = 10;
+  console.log(typeof value); // "number"
+
+// Ternary
+let age = 26;
+let beverage = age >= 21 ? "Beer" : "Juice";
+console.log(beverage); // "Beer
