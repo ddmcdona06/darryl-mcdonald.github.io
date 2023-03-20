@@ -116,7 +116,28 @@ var firstLetterCount = function(array, letter){
 }
 
 var friendFirstLetterCount = function(array, customer, letter){
-
+    //declare num with a 0 value
+  let num = 0;
+  //declare an empty array
+  let newArr = [];
+  //use for loop to iterate through array
+  for(let i = 0; i < array.length; i++){
+    //use while loop to limit the condition to only when customer matches name 
+     if(customer === array[i]["name"]){
+       //iterate through the friends array
+       for(let j = 0; j < array[i]["friends"].length; j++){
+         //if condtional to compare character 0 to letter
+         if(array[i]["friends"][j]["name"].charAt(0) === letter.toUpperCase()){
+           //push result into a new array
+           newArr.push(array[i]["friends"][j]["name"]);
+         }
+       }
+      }
+  }     
+  //declare num to equal the length of the new array
+  num = newArr.length
+  //return num
+  return num;  
 };
 
 var friendsCount;
