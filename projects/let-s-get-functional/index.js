@@ -193,7 +193,24 @@ var topThreeTags = function(array){
   return newArr;
 }
 
-var genderCount;
+var genderCount = function(array){
+  //assign object to reduce method
+  let genderObj = array.reduce(function(allGenders, gender){
+    //if gender is in allGender obj 
+    if(gender in allGenders){
+      //add a valu of 1 to count
+      allGenders[gender]++;
+      //else create key/value and assign 1
+    } else{
+      allGenders[gender] = 1
+    }
+    //return the object
+    return allGenders;
+  }, {});
+  
+
+  return genderObj;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
