@@ -170,10 +170,10 @@ var topThreeTags = function(array){
   }
   //create empty object
   let newArr = [];
-  let emptyKey;
+  let emptyKey = [];
   let tagObj = {};
   //for of loop to iterate through array and assign to object
-  for(index of tag){
+  for(let index of tag){
     //if key/value pair exist add 1
     if(tagObj[index]){
       //add 1
@@ -181,7 +181,7 @@ var topThreeTags = function(array){
       //else create key/value pair
     } else {
       //assign value of 1
-      tagObj[index] =1;
+      tagObj[index] = 1;
     }
   }
    //use object entries method to push into an array
