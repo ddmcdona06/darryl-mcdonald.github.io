@@ -158,7 +158,40 @@ var friendsCount = function(array, contact){
   return friend;
   }
 
-var topThreeTags;
+var topThreeTags = function(array){
+  let tag = [];
+  //iterate through array
+  for(let i = 0; i < array.length; i++){
+    //iterate through tags array
+    for(let j = 0; j < array[i].tags.length; j++){
+      //push into tag 
+      tag.push(array[i].tags[j]);
+    }
+  }
+  //create empty object
+  let newArr = [];
+  let emptyKey;
+  let tagObj = {};
+  //for of loop to iterate through array and assign to object
+  for(index of tag){
+    //if key/value pair exist add 1
+    if(tagObj[index]){
+      //add 1
+      tagObj[index] += 1;
+      //else create key/value pair
+    } else {
+      //assign value of 1
+      tagObj[index] =1;
+    }
+  }
+   //use object entries method to push into an array
+  emptyKey = Object.entries(tagObj);
+  emptyKey.sort(function(a, b){
+    return b[1] - a[1];
+  })
+  newArr.push(emptyKey[0][0], emptyKey[1][0], emptyKey[2][0]);
+  return newArr;
+}
 
 var genderCount;
 
