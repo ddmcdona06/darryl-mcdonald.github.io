@@ -196,19 +196,17 @@ var topThreeTags = function(array){
 var genderCount = function(array){
   //assign object to reduce method
   let genderObj = array.reduce(function(accumulator, current){
-    //if gender is in allGender obj 
-    if(current.gender === "female"){
-      genderObj["female"] = accumulator += 1;
-  } else if(current.gender === "male"){
-      genderObj.male = accumulator +=1;
-    } else if(current.gender === "non-binary"){
-      genderObj["non-binary"] = accumulator += 1;
+   //if statement to determine if gender exist in current and accumulator
+    if(accumulator[current.gender]){
+      //console.log(Object.values(current["gender"]));
+      accumulator[current.gender] += 1
+      //otherwise add key/value pair to accumulator
+    } else{
+      accumulator[current.gender] = 1;
     }
-    //return the object 
-    return allGenders;
-  }, 0);
+    return accumulator;
+  }, {});
   
-
   return genderObj;
 }
 
