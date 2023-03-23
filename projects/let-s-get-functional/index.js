@@ -63,7 +63,7 @@ var youngestCustomer = function(array){
       //declare output string
       let youngest = "";
       //declare variable to equal a number
-      let age = 0;
+      let age = Infinity;
       //loop through array
       for(let i = 0; i < array.length; i++){
           //if statement comparing age values 
