@@ -65,19 +65,27 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
-
+var range = function(x, y, array = []) {
   //base
   if(x === y){
-    return;
-
+    return array;
   }
   //recursion
-  if(x < y){
-
-return range(x+1, y, [])
+  if(x > y){
+    if(x === y + 1){
+      return array;
+    } else{
+      array.push(x - 1);
+      return range(x - 1, y , array);
+    }
+  } else if( x < y){
+    if(x === y - 1){
+      return array;
+    } else{
+      array.push(x + 1);
+      return range(x + 1, y, array);
+    }
   }
-  
 };
 
 // 7. Compute the exponent of a number.
@@ -93,9 +101,12 @@ var exponent = function(base, exp) {
   if(exp === 0){
     return 1;
   }
+  if(exp < 0){
+    return base * exponent(base, exp + 1)
+  } else
   //recursion case
 
-  return base * exponent(base, exp-1)
+  return base * exponent(base, exp - 1)
 };
 
 // 8. Determine if a number is a power of two.
@@ -132,6 +143,18 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  string = string.replace(/\s/g, '').toLowerCase();
+  //base
+  if(string === "" || string === string.charAt(0)){
+    return true;
+  }
+  if(string[0] === string[string.length - 1]){
+    //recursion
+    return palindrome(string.substring(1, string.length - 1))
+      }else if(string[0] !== string[string.length - 1]){
+        return false;
+  }
+  
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -193,17 +216,32 @@ var compareStr = function(str1, str2) {
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str, arr = []){
+  //base 
+  if(str === ""){
+    return arr;
+  }
+  //recursion 
+  arr.push(str[0]);
+  return createArray(str.slice(1), arr)
 };
 
 // 17. Reverse the order of an array
-var reverseArr = function (array) {
+var reverseArr = function (arr, str = "", array = []) {
+
+
 };
 
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
-var buildList = function(value, length) {
+var buildList = function(value, length, arr=[]) {
+  //base 
+  if(length === 0){
+    return arr;
+  }
+  arr.push(value);
+  return buildList(value, length - 1, arr)
 };
 
 // 19. Count the occurence of a value inside a list.
