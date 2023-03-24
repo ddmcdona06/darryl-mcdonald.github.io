@@ -247,12 +247,24 @@ var buildList = function(value, length, arr=[]) {
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
+var countOccurrence = function(array, value, num=0) {
+  //base
+  if(array.length === 0){
+    return num;
+  }
+  if(array[0] === value){
+    num += 1
+  }
+  return countOccurrence(array.slice(1), value, num)
 };
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
-var rMap = function(array, callback) {
+var rMap = function(array, callback, arr=[]) {
+  //base
+  if(array.length === 0){
+    return arr
+  }
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
@@ -287,7 +299,11 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n) {
+var nthFibo = function(n, arr=[]) {
+  if(a){
+    return arr.indexOf(arr[n])
+  }
+  return nthFibo(n, arr.slice(1))
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
