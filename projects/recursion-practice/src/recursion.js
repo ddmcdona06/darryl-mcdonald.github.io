@@ -314,12 +314,28 @@ var nthFibo = function(n, arr=[]) {
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, arr=[]) {
+   //base
+   if(input.length === 0){
+    return arr;
+  }
+  //recursion
+  input[0] = input[0].toUpperCase();
+  arr.push(input[0]);
+  return capitalizeWords(input.slice(1), arr)
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
-var capitalizeFirst = function(array) {
+var capitalizeFirst = function(array, arr=[]) {
+    //base
+    if(array.length === 0){
+      return arr;
+    }
+    //recursion
+    array[0] = array[0].charAt(0).toUpperCase() + array[0].slice(1);
+    arr.push(array[0]);
+    return capitalizeFirst(array.slice(1), arr)
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -342,6 +358,7 @@ var flatten = function(arrays) {
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
 var letterTally = function(str, obj) {
+  
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
