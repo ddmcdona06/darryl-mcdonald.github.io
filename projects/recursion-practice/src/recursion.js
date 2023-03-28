@@ -269,8 +269,7 @@ var rMap = function(array, callback, arr=[]) {
   //base
   if(array.length === 0){
     return arr
-  }
-
+  }  
   let num = callback(array[0])
   arr.push(num)
   return rMap(array.slice(1), callback, arr)
@@ -481,7 +480,20 @@ var alternateSign = function(array, arr=[]) {
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {
+var numToText = function(str, str1="") {
+  if(str.length === 0){
+    return str1;
+  }
+  if(typeof str[0] === "string"){
+    str1.concat(str[0]);
+  }
+  if(typeof str[0] === "number"){
+    str1.concat(numToWords(str[0]));
+  }
+  if(str[0] === " "){
+    str1.concat(str[0])
+  }
+  return numToText(str.slice(1), str1)
 };
 
 // *** EXTRA CREDIT ***
