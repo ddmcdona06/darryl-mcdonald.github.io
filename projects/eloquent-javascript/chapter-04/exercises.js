@@ -2,8 +2,29 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
-
+function range(start, end, step, arr=[]) {
+  if(step > 0){
+  if(start < end){
+    for(let i = start; i <= end; i+=step){
+      arr.push(i);
+    }
+  } else if(start > end){
+    for(let j = start; j >= end; j-=step){
+      arr.push(j);
+    }
+  }
+} else if(step === 0 || !step){
+  if(start < end){
+    for(let i = start; i <= end; i++){
+      arr.push(i);
+    }
+  } else if(start > end){
+    for(let j = start; j >= end; j--){
+      arr.push(j);
+    }
+  }
+} 
+  return arr;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
