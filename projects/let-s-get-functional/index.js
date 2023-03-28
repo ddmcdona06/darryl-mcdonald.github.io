@@ -79,21 +79,19 @@ var youngestCustomer = function(array){
 }
 
 var averageBalance = function(array){
-    //declare empty array
-    let empty = [];
-    //declare var for total
-    let total = 0;
-    //declare var for average
-    let average = 0;
-    //use for loop to access array
-    for(let i = 0; i < array.length; i++){
-         empty.push(array[i]["balance"]);
-    }
-    //use for loop to iterate through new array
-    for(let j = 0; j < empty.length; j++){
-        total += empty[j];    }
-    average = total / empty.length;
-    return average;
+  //declare var for total
+  let total = 0;
+  //declare var for average
+  let average = 0;
+  //use for loop to access array
+  for(let i = 0; i < array.length; i++){
+    let string1 = array[i]["balance"];
+    let next = string1.replace(/[^0-9\.]+/g, "");
+    let nums = +next;
+    total += nums
+  }
+  average = total / array.length;
+  return average;   
 }
 
 var firstLetterCount = function(array, letter){
