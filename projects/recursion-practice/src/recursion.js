@@ -102,7 +102,7 @@ var exponent = function(base, exp) {
     return 1;
   }
   if(exp < 0){
-    return base * exponent(base, exp + 1)
+    return exponent(base, exp + 1)/ base;
   } else
   //recursion case
 
@@ -308,13 +308,19 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n, arr) {
+var nthFibo = function(n, arr=[0, 1]) {
   if(n === 0){
     return arr[0];
+  } else if(n === 1){
+    return arr[1];
+  }
+  if(arr[n]){
+    return arr[n];
   }
     //recursion
-    if(n > 0){
-      return nthFibo(n - 1, arr.slice(1));
+    if(n > 0){    
+      arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+      return nthFibo(n, arr)
     } else if (n < 0){
       return null;
     }
