@@ -17,7 +17,9 @@ function flatten(array) {
 // /////////////////////////////////////////////////////////////////////////////
 
 function loop(value, testFunc, updateFunc, bodyFunc) {
+  //use for loop to test and update value
   for(let i = value; testFunc(i); i = updateFunc(i)){
+    //call the body function
     bodyFunc(i);
   }
 }
