@@ -56,31 +56,76 @@ function reverseArray(array, arr=[]) {
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace(array, arr=[]) {
- 
+function reverseArrayInPlace(array) {
+  //use for loop to access array
+  for(let i = 0; i < Math.floor(array.length / 2); i++){
+    let first = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - i - 1] = first;
+  }
+ return array;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+    // Checking whether user has passed a non-empty array as an argument
+    if (!array.length) {
+        return {};
+    }
 
+    // object of the first element of the array
+    let list = {
+        value: array[0]
+    };
+
+    // Base
+    //array only contains a single element
+    if (array.length == 1) {
+        list.rest = null;
+        return list;
+    }
+
+    // recursion
+    //create a list with the remaining elements of array
+    list.rest = arrayToList(array.slice(1));
+
+    return list;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
+function listToArray(list) {
+  // Checking whether user has passed a non-empty array as an argument.
+  if (!Object.keys(list).length) {
+      return [];
+  }
 
+  let array = [list.value];
+
+  // Base Step: Node is the TAIL of the List.
+  if (list.rest === null) {
+      return array;
+  }
+
+  // Recursive Step: Concatenate the array returned by calling the function itself
+  return array.concat(listToArray(list.rest));
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function prepend(element, list) {
+  return {
+    value: element,
+    rest: list
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -88,12 +133,15 @@ function prepend(element, list) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function nth(list, n) {
-  //determine if there is a list with if statement
-  if(list === undefined){
-    return undefined;
-  } else if(n > 0){
-    return list[n - 1];
-  }
+// base
+if(!list){
+  return undefined;
+} 
+if(n === 0){
+    return list.value;
+  } 
+  //recursion
+    return nth(list.rest, n - 1);
 
 }
 
