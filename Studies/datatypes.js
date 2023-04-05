@@ -35,6 +35,19 @@
 
     - Function: a set of statements that performs a task or calculates a value -> function(){a + b}
 
+  3. Copy by Value
+        When working with primitive data types (numbers, strings, Booleans, null, and undefined)
+        your variables will be making a copy of the value they're being assigned and represent that specific copy
+        of the value. Any changes to the original data will not effect the copy that was made and stored in 
+        the variable we've created. Vice versa, these values stored into our variable can be manipulated 
+        without any changes to the original data.
+
+  4. Copy by Reference
+        When working with complex data types (Objects, arrays, functions) your variables will not 
+        make a copy of the value they're being assigned to, but instead will make a reference to that data. 
+        Any manipulation of our variable will effect the original data since our variable is just a 
+        reference to the original data. Similarly, any changes to the original data will effect our variable as well.
+
 Examples:
  */ 
 
@@ -82,3 +95,21 @@ function darryl(age){
 }
 //call function
 console.log(darryl(40)); // "He is 40."
+
+//copy by reference
+let a = {
+    name: 'Object',
+    color: 'blue'
+ }
+ let b = a;
+
+console.log(a); // prints {name: 'Object, color: 'orange'} 
+console.log(b); // prints {name: 'Object, color: 'orange'}
+
+//copy by value
+let c = 17;
+let d = "xyz";
+let e = null;
+let f = c;
+let g = d;
+console.log(c, d, f, g)// => 17, "xyz", 17, "xyz"
