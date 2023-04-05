@@ -4,8 +4,7 @@
 
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
- * action Function to each value in the collection.
- * 
+ * action Function to each value in the collection. * 
  * @param {Array or Object} collection: The collection over which to iterate.
  * @param {Function} action: The Function to be applied to each value in the 
  * collection
@@ -27,7 +26,7 @@ module.exports.each = each;
  * identity: Designed to return a value unchanged
  * 
  * @param {Any} value: the value being returned 
- * @returns value
+ * @returns {Any} value
  * 
  */
 
@@ -37,9 +36,9 @@ function identity(value){
 module.exports.identity = identity;
 
 /**
- * typeOf: Designed to return the datatype of value as a string 
+ * typeOf: Designed to return the datatype of the input value as a string 
  * @param {Any} value: Any datatype
- * @returns Datatype of value as a string
+ * @returns {String} Function returns datatype of the input value as a string
  * 
  */
 function typeOf(value){
@@ -58,8 +57,8 @@ module.exports.typeOf = typeOf;
 /**
  * first: Designed to return the first <number> of elements in the <array>
  * @param {Array} array over which to iterate
- * @param {Numeric value} num 
- * @returns array with only the first <number> of elements
+ * @param {Numeric value} num Any numeric value
+ * @returns {Array} Function returns an array with only the first <number> of elements
  */
 function first(arr, num){
     //declare an empty array
@@ -88,10 +87,11 @@ function first(arr, num){
   module.exports.first = first;
 
   /**
-   * filter: Designed to return a new array of values found true within the func
+   * filter: Designed to pass each value of the input array into a callback function.
+   *  If the callback function returns true the item is passed into an output array.
    * @param {Array of indexes} array over which to iterate
    * @param {Function} action: function to be applied to each value in the array
-   * @returns a new array of values found to be true when called into func 
+   * @returns {Array} A new array of values found to be true when called in the callback function
    */
   function filter(array, func){
     //declare new array
@@ -109,10 +109,11 @@ function first(arr, num){
     module.exports.filter = filter;
 
     /**
-     * reject: Designed to return a new array of values found false within func
+     * reject: Designed to pass each value of the input array into a callback function.
+   *    If the callback function returns false the item is passed into an output array.
      * @param {Array} array over which to iterate
-     * @param {Function} action: function to be applied to each value in the array
-     * @returns a new array of values found to be false when called into function
+     * @param {Function} action: function to be applied to each value in the input array
+     * @returns {Array} A new array of values found to be false when called in the callback function
      */
     function reject(array, func){
         //declare new array
@@ -130,10 +131,12 @@ function first(arr, num){
          module.exports.reject = reject;
 
     /**
-     * partition: Designed to return an array of arays
+     * partition: Designed to pass each value of the input array into a callback function.
+     *  If the function returns true, the value is passed into subarray of true values.
+     *  If the function returns false, the value is passed into subarray of false values.
      * @param {Array} array over which to iterate
      * @param {Function} action: function to be applied to each value in array
-     * @returns an array with both truthy and falsey values as separate indexes 
+     * @returns {Multidimensional Array} An array with subarrays of both truthy and falsey values as separate indexes 
      */
     function partition (array, func){
       //declare big array
@@ -163,7 +166,7 @@ function first(arr, num){
      * map: Designed to take an array and return the values of a function call within a new array
      * @param {Array or Object} collection of values 
      * @param {Function} action: to be applied to every index in an array
-     * @returns a new array of values called by the function
+     * @returns {Array} a new array of values called by the function
      */
     function map(collection, func){
       //declare an empty array
@@ -191,7 +194,7 @@ function first(arr, num){
      * pluck: Designed to return an array with the value of property at each element
      * @param {Array} array of objects
      * @param {Any value} prop: the key name
-     * @returns an array of keys values
+     * @returns {Array} Returns a new array of the values at the input property for each item in the input array
      */
     function pluck(array, prop){
       //declare new array to value of map function
@@ -204,10 +207,11 @@ function first(arr, num){
     module.exports.pluck = pluck;
 
     /**
-     * every: Designed to take in a loop through a collection called by a function that return true or false values
+     * every: Designed to iterate through a collection and pass each item or value into a callback function.
+     *  If one item is false, every returns false; if all items are true, every returns true.      * 
      * @param {Array or Object} collection of values
      * @param {Function} action: determines if the values at eahc element of collection are truthy or falsey
-     * @returns true if every element is true, false otherwise
+     * @returns {Boolean} Returns true if every element is true, false otherwise
      */
     function every(collection, func){
       //determine if func exist
@@ -252,10 +256,11 @@ function first(arr, num){
     module.exports.every = every;
     
     /**
-     * some: Designed to take in a loop through a collection called by a function that return true or false values
+     * some: Designed to iterate through a collection and pass each item or value into a callback function. 
+     *  If one item is true, every returns true; if all items are false, every returns false.
      * @param {Array or Object} collection of values
      * @param {Function} action: determines if the values at eahc element of collection are truthy or falsey
-     * @returns false if every element is false, othewise true
+     * @returns {Boolean} Returns false if every element is false, othewise true
      */
     function some(collection, func){
       //determine if func exist
@@ -304,7 +309,7 @@ module.exports.some = some;
  * @param {Object} object1: any value that resolves to an object
  * @param {Object} object2: any value that resolves to an object 
  * @param  {...any Object} object: any number of remaining object parameters 
- * @returns the first object inclusive of all other objects key values in the parameter
+ * @returns {Object} Returns the first object inclusive of all other objects key values in the parameter
  */
 function extend(object1, object2, ...object){
 
@@ -320,7 +325,7 @@ module.exports.extend = extend;
  * indexOf: Designed to return the index of the first element that matches value
  * @param {Array} array 
  * @param {Any} value 
- * @returns the index of the matching value, or -1
+ * @returns {number} the index of the matching value, or -1
  */
 function indexOf(array, value){
   //declare variale to equal -1
@@ -341,7 +346,7 @@ module.exports.indexOf = indexOf;
 /**
  * unique: Designed to return an array with no duplicate values
  * @param {Array} array of any values
- * @returns a new array of unique values
+ * @returns {Array} Returns a new array of unique values
  */
 function unique(array){
   let newArr = array.filter(function(value, index){
@@ -355,7 +360,7 @@ module.exports.unique = unique;
  * last: Designed to return the last <number> of elements in an array
  * @param {Array} any value over which to iterate
  * @param {Number} any numeric value
- * @returns array with only the last <number> of elements
+ * @returns {Array} Returns an array with only the last <number> of elements
  */
 function last(arr, num){
   //declare an empty array
@@ -387,7 +392,7 @@ module.exports.last = last;
  * contains: Determines if an array contains a value 
  * @param {Array} array of values 
  * @param {Value} any value 
- * @returns true if array contains value, false otherwise
+ * @returns {Boolean} Returns true if array contains value, false otherwise
  */
 function contains(array, value){
   var here = false;
@@ -402,11 +407,11 @@ function contains(array, value){
 module.exports.contains = contains;
 
 /**
- * reduce: to reduce the size of the array to a single value
+ * reduce: Designed to iterate through an array to accumulate a single return value
  * @param {Array} array of values
  * @param {Function} action: passes every element in array passing the arguments
  * @param {Value} seed valued as the previous sult of the function call
- * @returns return the final value of the function call
+ * @returns {Any} Returns the final value of the function call
  */
 function reduce(array, func, seed){
   //create result variable
