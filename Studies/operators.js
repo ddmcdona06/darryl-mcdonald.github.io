@@ -62,21 +62,31 @@
 
   // Arithmatic
   let a = 3;
-  let b = (100 + 50) * a; console.log(b) // 450
+  let b = 6; 
+  console.log(a + b) // 9
+  console.log(b - a)// 3
+  console.log(a * b)// 18
+  console.log(b / a)// 2
+  console.log(b ** a)// 216
+  console.log(7 % 2)// 1
+
 
   // Comaprison
   let c = 5;
   let d = 8;
-  if(c < d){
-    console.log(true); // true
-  };
+  if(c < d){console.log(true)}; // true
+  if(c > d){console.log(true)};// false
+  if(c === d){console.log(true)};// false
+  if(c !== d){console.log(true)};// true
+  if(c <= d){console.log(true)};// true
+  if(c >= d){console.log(true)};// false
 
   // Logical
   let e = 8;
   let f = 10;
-  if(e > 5 && f < 20){
-    console.log("decent number") // decent number
-  };
+  if(e > 5 && f < 20){console.log("decent number")}; // decent number
+  if(e > 5 || f < 6){console.log("decent number")}; // decent number
+
 
   // Unary 
   let value = 10;
