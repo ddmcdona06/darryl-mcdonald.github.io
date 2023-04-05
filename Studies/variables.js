@@ -64,15 +64,10 @@ age = 29; console.log(age) // 29
 
 //Hoisting:
 
-const x = 1;
+
 {
-  console.log(x); // ReferenceError
-  const x = 2;
+  console.log(hoisted); // undefined
+  var hoisted = "var variables are hoisted";
 }
 
-/**
- * If the const x = 2 declaration is not hoisted at all (as in, it only comes into effect when it's executed),
- * then the console.log(x) statement should be able to read the x value from the upper scope.
- * However, because the const declaration still "taints" the entire scope it's defined in, 
- * the console.log(x) statement reads the x from the const x = 2 declaration instead, which is not yet initialized, and throws a ReferenceError
- */
+//var, unlike let and const, are hoisted to the top of the program scope
